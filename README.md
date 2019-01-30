@@ -32,4 +32,10 @@ stm32f103vet6
 >|TX|PA9|
 
 >使用USART1，波特率9600，使用串口调试助手发送‘1’控制led翻转并回传告知灯亮/灯灭，发送其他字符单片机回传。
+#### uart_receive_interrupt
+> 通过串口接收中断实现上述操作，注意开启接收中断和中断回调函数的写法。
+#### timer_base
+> 定时器基础功能使用，使用TIM2，每一秒进一次中断，通过USART1打印出单片机运行时间，格式为：00:00:00，同时实现流水灯，红、蓝、绿三灯依次亮灭。注意定时器Prescaler和Counter Period参数配置。
+#### timer_pwm
+> 利用定时器输出PWM波，使用TIM3_CH3，映射至PB0，实现呼吸灯功能，及渐亮渐灭。注意注意定时器Prescaler和Counter Period参数配置；注意PWM Mode和CH Polarity配置。
 
