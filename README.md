@@ -38,5 +38,8 @@ stm32f103vet6
 #### timer_base
 > 定时器基础功能使用，使用TIM2，每一秒进一次中断，通过USART1打印出单片机运行时间，格式为：00:00:00，同时实现流水灯，红、蓝、绿三灯依次亮灭。注意定时器Prescaler和Counter Period参数配置。
 #### timer_pwm
-> 利用定时器输出PWM波，使用TIM3_CH3，映射至PB0，实现呼吸灯功能，及渐亮渐灭。注意注意定时器Prescaler和Counter Period参数配置；注意PWM Mode和CH Polarity配置。
-
+> 利用定时器输出PWM波，使用TIM3_CH3，映射至PB0，实现呼吸灯功能，即渐亮渐灭。注意注意定时器Prescaler和Counter Period参数配置；注意PWM Mode和CH Polarity配置。
+#### timer_input_capture
+> TIM3_CH1输出PWM波，TIM8_CH2捕获PWM，通过定时器捕获实现获取PWM波周期、占空比等信息，并通过串口打印出来。利用定时器输入捕获功能时注意Prescaler的设置，Prescaler的参数关系到捕获的精度。
+#### timer_encoder
+> 开启定时器TIM3的编码器模式，对正交编码器解码。利用TIM2，每10ms读一次TIM3计数值并清零，从而获取编码器单位时间按内的增量，即旋转速度。高级定时器和部分通用定时器有此功能。注意Encoder Mode和Polarity的设置。
