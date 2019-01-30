@@ -22,6 +22,13 @@ stm32f103vet6
 4. interrupt_callback.c为中断回调函数聚集地
 ### 例程说明
 #### key_control_led
-按键控制led灯亮灭，按下按键改变led状态
+>按键控制led灯亮灭，按下按键改变led状态
 #### key_control_led_by_interrupt
-通过EXIT中断方式,使用按键控制led亮灭
+>通过EXIT中断方式，使用按键控制led亮灭，效果和上一程序相同
+#### uart_receive_and_transmit
+>|功能 |引脚 |
+>|---|----|
+>|RX|PA10|
+>|TX|PA9|
+>使用USART1，波特率9600，使用串口调试助手发送‘1’控制led翻转并回传告知灯亮/灯灭，发送其他字符单片机回传。
+
